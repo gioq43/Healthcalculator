@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<!--
+Author:Giovanni Quintero
+
+-->
+
+<head>
+	<meta charset="UTF -8">
+	<link rel="stylesheet" href="health.css"
+	<title?> Health Insurance Risk Calculator </title>
+</head>
+
+<body>
+
+	<h1> Health Insurance Risk Calculator </h1>
+
+
+	<p1>
+		INSTRUCTIONS:
+		<br/>
+		<br/>
+
+Please answer each of the questions with a choice from the options down below.
+<br/>
+<br/>
+
+This Will best help determining your Overall  Risk for Health Insurers.
+<br/>
+<br/>
+Total Risk Category Based on Your Score is Determined as Followed
+<br/>
+<br/>
+Under 20 = Low Risk
+<br/>
+20-50 = Moderate Risk
+<br/>
+50-75 = High Risk 
+<br/>
+Above 75 = Uninsurable
+<br/>
+
+	</p1>
+<br/>
+
+<p2>
+	<label> Age </label><br />
+	<select id="q1">
+		<option value="0">Under 30</option>
+		<option value="10">30-44</option>
+		<option value="20">45-59</option>
+		<option value="30">Over 60</option>
+	</select>
+	<br>
+	<br>
+
+	<label> BMI </label><br />
+	<select id="q2">
+		<option value="0">Normal</option>
+		<option value="35">Overweight</option>
+		<option value="70">Else</option>
+\	</select>
+	<br>
+	<br>
+
+	<label> What are your blood pressure levels? </label><br />
+	<select id="q3">
+		<option value="0">Normal</option>
+		<option value="15">Elevated</option>
+		<option value="30">Stage 1</option>
+		<option value="75">Stage 2</option>
+		<option value="100">Crisis</option>
+
+	</select>
+	<br>
+	<br>
+
+
+	<label> Has someone in your family ever had Diabetes? </label><br />
+	<select id="q4">
+		<option value="0">No</option>
+		<option value="10">Yes</option>
+\	</select>
+	<br>
+	<br>
+
+	<label> Has someone in your family ever been diagnosed with Cancer? </label><br />
+	<select id="q5">
+		<option value="0">No</option>
+		<option value="10">Yes</option>
+\	</select>
+	<br>
+	<br>
+
+	<label> Has someone in your family ever suffered with Alzheimers ? </label><br />
+	<select id="q6">
+		<option value="0">No</option>
+		<option value="10">Yes</option>
+\	</select>
+	<br>
+	<br>
+
+	</p2>
+
+	<button onclick="calculateRisk()">Calculate Risk</button>
+	<p id="Risk"></p>
+
+
+
+
+<script>
+	console.log("Health Risk ");
+
+	function calculateRisk() {
+		console.log("calculateRisk()");
+
+
+			let Age = Number(document.getElementById("q1").selectedOptions[0].value)
+			let BMI = Number(document.getElementById("q2").selectedOptions[0].value)
+			let Pressure  = Number(document.getElementById("q3").selectedOptions[0].value)
+			let Diabetes = Number(document.getElementById("q4").selectedOptions[0].value)
+			let Cancer = Number(document.getElementById("q5").selectedOptions[0].value)
+			let Alzheimers = Number(document.getElementById("q6").selectedOptions[0].value)
+
+
+			console.log("Question 1 Answers: Age")
+			console.log(document.getElementById("q1").selectedOptions[0].text);
+			console.log(document.getElementById("q1").selectedOptions[0].value);
+
+			console.log("Question 2 Answers: BMI");
+			console.log(document.getElementById("q2").selectedOptions[0].text);
+			console.log(document.getElementById("q2").selectedOptions[0].value);
+
+			console.log("Question 3 Answers: Pressure");
+			console.log(document.getElementById("q3").selectedOptions[0].text);
+			console.log(document.getElementById("q3").selectedOptions[0].value);
+
+			console.log("Question 4 Answers: Diabetes");
+			console.log(document.getElementById("q4").selectedOptions[0].text);
+			console.log(document.getElementById("q4").selectedOptions[0].value);
+
+			console.log("Question 5 Answers: Cancer");
+			console.log(document.getElementById("q5").selectedOptions[0].text);
+			console.log(document.getElementById("q5").selectedOptions[0].value);
+
+			console.log("Question 6 Answers: Alzheimers");
+			console.log(document.getElementById("q6").selectedOptions[0].text);
+			console.log(document.getElementById("q6").selectedOptions[0].value);
+
+
+			
+let Risk = Age + BMI + Pressure + Cancer + Alzheimers
+
+console.log("Risk")
+console.log(Risk);
+
+document.getElementById("Risk").innerHTML = "Your Total Risk is " + " " + Risk;
+
+	}
+
+</script>
+</body>
+</html>
